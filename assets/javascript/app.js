@@ -119,19 +119,22 @@ function clock() {
     $('#trainTableBody tr').each(function() {
       var min = $(this).find("td:last").prev().html();
       var minDecrement = min - 1;
+      console.log("minDecrement", minDecrement);
 
       if(minDecrement > 0){
         $(this).find("td:last").prev().html(minDecrement);
-      } else {
+      }
+      else {
          $(this).find("td:last").prev().prev().html("--");
          $(this).find("td:last").prev().html("ARRIVED").addClass("arrived");
-       }
-       setTimeout(renderSchedule, 60000);
+         var r = setTimeout(renderSchedule, 30000);
+      }
     });
+
   }
 
-
   var t = setTimeout(clock, 1000);
+
 }
 
 function checkTime(i) {
