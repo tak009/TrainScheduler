@@ -12,8 +12,6 @@ firebase.initializeApp(config);
 // Create a variable to reference the database
 var database = firebase.database();
 var ref = firebase.database().ref();
-// var firebase = require('firebase');
-// var firebaseui = require('firebaseui');
 
 // Capture Button Click
 $("#addtrain").on("click", function(event) {
@@ -128,7 +126,7 @@ function clock() {
          $(this).find("td:last").prev().prev().html("--");
          $(this).find("td:last").prev().html("ARRIVED").addClass("arrived");
        }
-       //setTimeout(renderSchedule, 60000);
+       setTimeout(renderSchedule, 60000);
     });
   }
 
@@ -142,79 +140,6 @@ function checkTime(i) {
   }; // add zero in front of numbers < 10
   return i;
 }
-
-
-
-// $(function() {
-//
-//   function revert() {
-//     $("#trainTableBody .editfield").each(function() {
-//       var $td = $(this).closest('td');
-//       $td.empty();
-//       $td.text($td.data('oldText'));
-//       $td.data('editing', false);
-//
-//       // canceled
-//       console.log('Edit canceled.');
-//     });
-//   }
-//
-//   function save($input) {
-//     var val = $input.val();
-//     var $td = $input.closest('td');
-//     $td.empty();
-//     $td.text(val);
-//     $td.data('editing', false);
-//
-//     // send json or whatever
-//     console.log('Value changed');
-//   }
-//
-//
-//   $('#trainTableBody td').on('keyup', 'input.editfield', function(e) {
-//     if (e.which == 13) {
-//       // save
-//       $input = $(e.target);
-//       save($input);
-//     } else if (e.which == 27) {
-//       // revert
-//       revert();
-//     }
-//   });
-//
-//   $("#trainTableBody td").click(function(e) {
-//
-//     // consuem event
-//     e.preventDefault();
-//     e.stopImmediatePropagation();
-//
-//     $td = $(this);
-//
-//     // if already editing, do nothing.
-//     if ($td.data('editing')) return;
-//     // mark as editing
-//     $td.data('editing', true);
-//
-//     // get old text
-//     var txt = $td.text();
-//
-//     // store old text
-//     $td.data('oldText', txt);
-//
-//     // make input
-//     var $input = $('<input type="text" class="editfield">');
-//     $input.val(txt);
-//
-//     // clean td and add the input
-//     $td.empty();
-//     $td.append($input);
-//   });
-//
-//
-//   $(document).click(function(e) {
-//     revert();
-//   });
-// });
 
 // Call functions
 renderSchedule();
