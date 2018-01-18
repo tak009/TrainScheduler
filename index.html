@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Train Scheduler</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css" rel="stylesheet" />
+  <script src="http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <!-- Firebase Authentication -->
+  <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="jumbotron text-center">
+      <div>
+        <h2 class="pb-3">Train Schedule</h2>
+        <img class="img-responsive" src="assets/images/train.gif" alt="train" />
+        <div class="clock" id="showTime"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="card">
+            <div class="card-header bg-primary text-white">
+              <h4 class="m-1">Current Train Schedule</h4>
+            </div>
+
+            <div class="card-block p-2">
+              <table class="table" id='trainTable'>
+                <thead>
+                  <tr>
+                    <th>Train Name</th>
+                    <th>Destination</th>
+                    <th>Frequency (min)</th>
+                    <th>Next Arrival</th>
+                    <th>Minutes Away</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id='trainTableBody'>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-4 mb-4">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
+            <h4 class="m-1">Add Train</h4>
+          </div>
+          <div class="card-block p-3">
+            <div class="form-group">
+              <div class="form-group">
+                <label for="trainName">Train Name</label>
+                <input type="text" class="form-control" id="trainNameInput" />
+              </div>
+
+              <div class=" form-group">
+                <label for="destination">Destination</label>
+                <input type="text" class="form-control" id="destinationInput" />
+              </div>
+
+              <div class="form-group bootstrap-timepicker">
+                <label for="firstTrainTime">First Train Time (HH:mm - military time)</label>
+                <input type="time" class="form-control" id="firstTrainTimeInput" />
+              </div>
+
+              <div class="form-group">
+                <label for="frequency">Frequency (min)</label>
+                <input type="text" class="form-control" id="frequencyInput" />
+              </div>
+
+              <button type="submit" id="addtrain" class="btn bg-primary text-white">Submit</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/javascript/app.js"></script>
+
+</body>
+
+</html>

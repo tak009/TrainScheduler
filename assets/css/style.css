@@ -1,0 +1,42 @@
+body {
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+img {
+  display:inline;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+ .jumbotron{
+   background-color: #c6c3bf;
+   text-align: center;
+ }
+
+ .clock {
+  font-size: 2em;
+  margin-top: 10px;
+}
+
+.arrived {
+  color: red;
+  font-weight: bold;
+}
+
+.cell-trash:hover span{
+    visibility: visible;
+}
+
+.fa-trash-o{
+  visibility: hidden;
+  cursor: pointer;
+}
